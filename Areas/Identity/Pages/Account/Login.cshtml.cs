@@ -22,6 +22,12 @@ namespace WebApplication1.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<Customer> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly SignInManager<Customer> _signInManager;
+        private readonly UserManager<Customer> _userManager;
+        private readonly IUserStore<Customer> _userStore;
+        private readonly IUserEmailStore<Customer> _emailStore;
+        private readonly ILogger<RegisterModel> _logger;
+        private readonly IEmailSender _emailSender;
 
         public LoginModel(SignInManager<Customer> signInManager, ILogger<LoginModel> logger)
         {
