@@ -16,18 +16,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using WebApplication1.Data;
 
-namespace WebApplication1.Areas.Identity.Pages.Account
+namespace SoundEffect.Areas.Identity.Pages.Account
 {
     public class LoginModel : PageModel
     {
         private readonly SignInManager<Customer> _signInManager;
         private readonly ILogger<LoginModel> _logger;
-        private readonly SignInManager<Customer> _signInManager;
-        private readonly UserManager<Customer> _userManager;
-        private readonly IUserStore<Customer> _userStore;
-        private readonly IUserEmailStore<Customer> _emailStore;
-        private readonly ILogger<RegisterModel> _logger;
-        private readonly IEmailSender _emailSender;
 
         public LoginModel(SignInManager<Customer> signInManager, ILogger<LoginModel> logger)
         {
@@ -72,7 +66,6 @@ namespace WebApplication1.Areas.Identity.Pages.Account
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
-            
             public string UserName { get; set; }
 
             /// <summary>
@@ -118,7 +111,7 @@ namespace WebApplication1.Areas.Identity.Pages.Account
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(Input.UserName , Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(Input.UserName, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
