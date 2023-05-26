@@ -20,7 +20,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using WebApplication1.Data;
 
-namespace SoundEffect.Areas.Identity.Pages.Account
+namespace WebApplication1.Areas.Identity.Pages.Account
 {
     public class RegisterModel : PageModel
     {
